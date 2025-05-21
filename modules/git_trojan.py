@@ -10,7 +10,7 @@ import time
 from datetime import datetime
 
 def github_connect():
-    with open('mytoken.txt') as f:
+    with open('/home/roman/VS/bhptrojan/mytoken.txt') as f:
         token = f.read()
     user = 'Roman26082008'
     sess = github3.login(token=token)
